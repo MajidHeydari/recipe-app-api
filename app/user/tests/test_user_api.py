@@ -38,7 +38,7 @@ class PublicUserApiTest(TestCase):
     def test_user_exists(self):
         """Test creating user that already exists fails"""
         payload = {
-            'email': 'test#gmail.com',
+            'email': 'test@gmail.com',
             'password': 'testpass',
         }
         create_user(**payload)
@@ -48,7 +48,7 @@ class PublicUserApiTest(TestCase):
     def test_password_too_short(self):
         """Test that the password must be more than 5 characters"""
         payload = {
-            'email': 'test#gmail.com',
+            'email': 'tes@gmail.com',
             'password': 'pw',
         }
         res = self.client.post(CREATE_USER_URL, payload)
